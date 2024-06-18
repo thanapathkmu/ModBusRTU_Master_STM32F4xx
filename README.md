@@ -1,4 +1,4 @@
-Modbus Library for STM32
+## Modbus Library for STM32 
 This library provides Modbus RTU communication functionality for STM32 microcontrollers using STM32Cube HAL.
 
 Features
@@ -22,18 +22,24 @@ Include "modbus.h" in your main application file (main.c).
 
 Call initialization functions as necessary, e.g.:
 
-c
 Copy code
+
+```c
 // Initialize UART and Timer
 MX_USART1_UART_Init();
 MX_TIM2_Init();
+```
+
 Sending Modbus Requests
 To read holding registers, use Modbus_ReadHoldingRegisters function:
 
-c
 Copy code
+
+```c
 // Example usage to read 2 registers starting from address 0
 Modbus_ReadHoldingRegisters(0x0000, 2);
+```
+
 Handling Responses
 Responses are handled asynchronously in Modbus_Receive function. Ensure UART interrupt handling is configured to receive Modbus responses.
 
